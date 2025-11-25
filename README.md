@@ -1,0 +1,1 @@
+A full-stack registration page that uses a NodeJS backend, a PostgreSQL database, a Prisma ORM, and JWT Authentication.
