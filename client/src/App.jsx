@@ -1,33 +1,31 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <a href="" className="logo">
+        <img src="" alt="" />
+        <span> Finnger </span>
+      </a>
+      <div className='text'>
+        <h1> Holla, Welcome Back </h1>
+        <h2> Hey, welcome back to your special place </h2>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form className='signin__form' action="">
+        <input type="text" id="username" placeholder='Enter username' name='username' required />
+        <input type="password" placeholder='Enter password' id="password" name="password" required />
+        <div>
+          <label>
+            <input type="checkbox" checked="checked" name='remember' />
+            Remember me
+          </label>
+          <a href="#" className='signin__forgot'> Forgot password? </a>
+        </div>
+        <button className='signin__button' type='submit'> Sign In </button>
+      </form>
+      <div> Don't have an account? <a href="#"> Sign Up </a> </div>
     </>
   )
 }
