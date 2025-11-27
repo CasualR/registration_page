@@ -1,8 +1,15 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+#root {}
+
+.signin {
+  padding-left: 90px;
+
+  &__form {}
+
+  &__forgot {}
+
+  &__button {}
 }
 
+.logo {}
 
+.text {}
