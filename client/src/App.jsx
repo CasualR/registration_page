@@ -7,7 +7,7 @@ function App() {
     <>
       <div className='signin'>
         <a href="" className="logo">
-          <img src="" alt="" />
+          <div></div>
           <span> Finnger </span>
         </a>
         <div className='text'>
