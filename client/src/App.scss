@@ -7,7 +7,33 @@
   justify-content: center;
   padding-left: 90px;
 
-  &__form {}
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+
+    #username {
+      padding: 10px;
+      border: 1px solid #a2a2a2;
+      border-radius: 5px;
+
+      &::placeholder {
+        font-family: Inter;
+      }
+    }
+
+    #password {
+      padding: 10px;
+      border: 1px solid #a2a2a2;
+      border-radius: 5px;
+
+      &::placeholder {
+        font-family: Inter;
+      }
+    }
+  }
 
   &__forgot {}
 

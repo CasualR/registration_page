@@ -37,3 +37,13 @@ a {
   color: inherit;
 }
 
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #000;
+}
+
