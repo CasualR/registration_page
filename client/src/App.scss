@@ -1,15 +1,92 @@
 #root {}
 
 .signin {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-left: 90px;
 
-  &__form {}
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+
+    #username {
+      padding: 10px;
+      border: 1px solid #a2a2a2;
+      border-radius: 5px;
+
+      &::placeholder {
+        font-family: Inter;
+      }
+    }
+
+    #password {
+      padding: 10px;
+      border: 1px solid #a2a2a2;
+      border-radius: 5px;
+
+      &::placeholder {
+        font-family: Inter;
+      }
+    }
+
+    #remember {
+      width: 20px;
+      height: 20px;
+
+      background-color: #a2a2a2;
+
+      &:checked {
+        background-color: #a75be6;
+      }
+    }
+  }
 
   &__forgot {}
 
   &__button {}
 }
 
-.logo {}
+.logo {
+  position: relative;
 
-.text {}
+  span {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 15px;
+
+    padding-left: 17px;
+  }
+
+  &::before {
+    position: absolute;
+    height: 70%;
+    width: 12px;
+    content: '';
+    top: 4px;
+
+    border-radius: 15px 15px 0px 0px;
+
+    background-color: #a75be6;
+  }
+}
+
+.text {
+
+  h1 {
+    font-family: Roboto;
+    font-size: 70px;
+    line-height: 1;
+  }
+
+  h2 {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 300;
+    color: #777;
+  }
+}
