@@ -19,7 +19,7 @@ function App() {
           <input type="password" placeholder='Enter password' id="password" name="password" required />
           <div>
             <label>
-              <input type="checkbox" checked="checked" name='remember' />
+              <input type="checkbox" id='remember' checked name='remember' />
               Remember me
             </label>
             <a href="#" className='signin__forgot'> Forgot password? </a>
