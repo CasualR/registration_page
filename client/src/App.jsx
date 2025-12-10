@@ -1,7 +1,12 @@
-import { useState } from 'react'
+import { useRef, useEffect } from 'react'
 import './App.scss'
 
 function App() {
+  const checkbox = useRef(null);
+
+  useEffect(() => {
+    checkbox.current.checked = true
+  })
 
   return (
     <>
@@ -17,9 +22,9 @@ function App() {
         <form className='signin__form' action="">
           <input type="text" id="username" placeholder='Enter username' name='username' required />
           <input type="password" placeholder='Enter password' id="password" name="password" required />
-          <div>
+          <div className='signin__bottom'>
             <label>
-              <input type="checkbox" id='remember' checked name='remember' />
+              <input ref={checkbox} type="checkbox" id='remember' name='remember' />
               Remember me
             </label>
             <a href="#" className='signin__forgot'> Forgot password? </a>
