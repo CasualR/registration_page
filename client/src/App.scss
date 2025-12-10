@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  gap: 70px;
   padding-left: 90px;
 
   &__form {
@@ -12,10 +14,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
+    gap: 10px;
 
     #username {
-      padding: 10px;
+      width: 430px;
+
+      padding: 15px;
       border: 1px solid #a2a2a2;
       border-radius: 5px;
 
@@ -25,7 +29,9 @@
     }
 
     #password {
-      padding: 10px;
+      width: 430px;
+
+      padding: 15px;
       border: 1px solid #a2a2a2;
       border-radius: 5px;
 
@@ -34,19 +40,46 @@
       }
     }
 
-    #remember {
-      width: 20px;
-      height: 20px;
 
-      background-color: #a2a2a2;
+  }
 
-      &:checked {
-        background-color: #a75be6;
+  &__bottom {
+    max-width: 450px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      user-select: none;
+
+      #remember {
+        width: 20px;
+        height: 20px;
+
+        border-radius: 4px;
+        text-align: center;
+
+        background-color: #a2a2a2;
+        background-size: cover;
+
+        &:checked {
+          background-color: #a75be6;
+          background-image: url('./checkmark.svg');
+        }
       }
     }
   }
 
-  &__forgot {}
+  &__forgot {
+    font-family: Roboto;
+    color: #a2a2a2;
+  }
 
   &__button {}
 }
@@ -78,9 +111,11 @@
 .text {
 
   h1 {
+    max-width: 410px;
+
     font-family: Roboto;
-    font-size: 70px;
-    line-height: 1;
+    font-size: 60px;
+    line-height: 1.1;
   }
 
   h2 {
