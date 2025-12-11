@@ -7,6 +7,7 @@ function App() {
   useEffect(() => {
     checkbox.current.checked = true
   })
+  
 
   return (
     <>
