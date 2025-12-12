@@ -4,6 +4,7 @@ import './App.scss'
 function App() {
   const checkbox = useRef(null);
 
+  // Checking the checkbox on the start of application
   useEffect(() => {
     checkbox.current.checked = true
   })
@@ -32,7 +33,7 @@ function App() {
           </div>
           <button className='signin__button' type='submit'> Sign In </button>
         </form>
-        <div> Don't have an account? <a href="#"> Sign Up </a> </div>
+        <div className='signin__signup'> Don't have an account? <a href="#"> Sign Up </a> </div>
       </div>
     </>
   )

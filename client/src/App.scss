@@ -6,37 +6,63 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 70px;
-  padding-left: 90px;
+  gap: 4.375rem;
+  padding-left: 5.625rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+
+    top: 0;
+    right: 0;
+
+    border-radius: 2.5rem;
+    border: 0.625rem solid #fff;
+    box-sizing: border-box;
+
+    background: url('background-image.png');
+    background-size: cover;
+    background-position: center;
+  }
 
   &__form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem;
 
     #username {
-      width: 430px;
+      width: 26.875rem;
 
-      padding: 15px;
-      border: 1px solid #a2a2a2;
-      border-radius: 5px;
+      font-size: 1rem;
+      cursor: text;
+
+      padding: 0.9375rem;
+      border: 0.0625rem solid #a2a2a2;
+      border-radius: 0.3125rem;
 
       &::placeholder {
         font-family: Inter;
+        font-size: 1rem;
       }
     }
 
     #password {
-      width: 430px;
+      width: 26.875rem;
 
-      padding: 15px;
-      border: 1px solid #a2a2a2;
-      border-radius: 5px;
+      font-size: 1rem;
+      cursor: text;
+
+      padding: 0.9375rem;
+      border: 0.0625rem solid #a2a2a2;
+      border-radius: 0.3125rem;
 
       &::placeholder {
         font-family: Inter;
+        font-size: 1rem;
       }
     }
 
@@ -44,7 +70,7 @@
   }
 
   &__bottom {
-    max-width: 450px;
+    max-width: 28.125rem;
     width: 100%;
 
     display: flex;
@@ -54,23 +80,32 @@
     label {
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 0.4375rem;
       cursor: pointer;
       user-select: none;
 
       #remember {
-        width: 20px;
-        height: 20px;
+        width: 1.25rem;
+        height: 1.25rem;
 
-        border-radius: 4px;
+        border-radius: 0.25rem;
         text-align: center;
 
         background-color: #a2a2a2;
         background-size: cover;
 
         &:checked {
-          background-color: #a75be6;
+          background-color: #7837FF;
           background-image: url('./checkmark.svg');
+        }
+
+        &:hover {
+          background-color: #b1b1b1; 
+
+          &:checked {
+          background-color: #8e57fa;
+          background-image: url('./checkmark.svg');
+        }
         }
       }
     }
@@ -81,7 +116,30 @@
     color: #a2a2a2;
   }
 
-  &__button {}
+  &__button {
+    font-family: Roboto;
+    color: #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: #7837FF;
+    
+    padding: 0.625rem 1.875rem;
+    margin-top: 3.125rem;
+
+    &:hover {
+      
+    }
+  }
+
+  &__signup {
+    font-family: Roboto;
+    font-weight: 400;
+    color: #777;
+    
+    a {
+      color: #7837FF;
+    }
+  }
 }
 
 .logo {
@@ -90,38 +148,58 @@
   span {
     font-family: Roboto;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 0.9735rem;
 
-    padding-left: 17px;
+    padding-left: 1.0625rem;
   }
 
   &::before {
     position: absolute;
     height: 70%;
-    width: 12px;
+    width: 0.75rem;
     content: '';
-    top: 4px;
+    top: 0.25rem;
 
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 0.9735rem 0.9735rem 0rem 0rem;
 
-    background-color: #a75be6;
+    background-color: #7837FF;
   }
 }
 
 .text {
 
   h1 {
-    max-width: 410px;
+    max-width: 25.625rem;
 
     font-family: Roboto;
-    font-size: 60px;
+    font-size: 3.75rem;
     line-height: 1.1;
   }
 
   h2 {
     font-family: Inter;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 300;
     color: #777;
+  }
+}
+
+// Media Queries
+
+@media (min-width: 1441px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1921px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 2500px) {
+  html {
+    font-size: 23px;
   }
 }
