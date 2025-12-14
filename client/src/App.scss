@@ -100,12 +100,12 @@
         }
 
         &:hover {
-          background-color: #b1b1b1; 
+          background-color: #b1b1b1;
 
           &:checked {
-          background-color: #8e57fa;
-          background-image: url('./checkmark.svg');
-        }
+            background-color: #8e57fa;
+            background-image: url('./checkmark.svg');
+          }
         }
       }
     }
@@ -122,20 +122,18 @@
     border-radius: 0.5rem;
     cursor: pointer;
     background-color: #7837FF;
-    
+
     padding: 0.625rem 1.875rem;
     margin-top: 3.125rem;
 
-    &:hover {
-      
-    }
+    &:hover {}
   }
 
   &__signup {
     font-family: Roboto;
     font-weight: 400;
     color: #777;
-    
+
     a {
       color: #7837FF;
     }
@@ -185,6 +183,25 @@
 }
 
 // Media Queries
+
+
+@media (max-width: 1200px) {
+  .signin {
+    padding-left: 3rem;
+  }
+}
+
+@media (max-width: 1030px) {
+  .signin {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 1030px) {
+  .signin {
+    padding-left: 2rem;
+  }
+}
 
 @media (min-width: 1441px) {
   html {
