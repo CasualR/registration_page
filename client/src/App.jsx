@@ -9,6 +9,11 @@ function App() {
     checkbox.current.checked = true
   })
   
+  async function loginUser(event) {
+    event.preventDefault();
+
+    
+  }
 
   return (
     <>
