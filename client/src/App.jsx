@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import './App.scss'
 
 function App() {
@@ -9,10 +9,21 @@ function App() {
     checkbox.current.checked = true
   })
   
-  async function loginUser(event) {
-    event.preventDefault();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null); 
 
-    
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    if (!username || !password) {
+      setError("All fields are required");
+      return;
+    }
+
+    try {
+      
+    }
   }
 
   return (
@@ -26,9 +37,10 @@ function App() {
           <h1> Holla, Welcome Back </h1>
           <h2> Hey, welcome back to your special place </h2>
         </div>
-        <form className='signin__form' action="">
-          <input type="text" id="username" placeholder='Enter username' name='username' required />
-          <input type="password" placeholder='Enter password' id="password" name="password" required />
+        <form onSubmit={handleLogin} className='signin__form' action="">
+          <input onChange={e => setUsername(e.target.value)} type="text" id="username" placeholder='Enter username' name='username' required />
+          <input onChange={e => setPassword(e.target.value)} type="password" placeholder='Enter password' id="password" name="password" required />
+          {error && <p>{error}</p>}
           <div className='signin__bottom'>
             <label>
               <input ref={checkbox} type="checkbox" id='remember' name='remember' />
