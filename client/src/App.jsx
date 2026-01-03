@@ -22,7 +22,28 @@ function App() {
     }
 
     try {
-      
+      const response = await fetch('http://localhost:3000', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({username: username, password: password})
+      });
+
+      // const response = await fetch('http://localhost:3000/api/user');
+
+      let data = await response.json();
+
+      if (!response.ok) {
+        setError(data.message || 'Login failed');
+        return;
+      }
+
+      console.log(data);
+
+    } catch (error) {
+      console.log(error.message);
     }
   }
 
