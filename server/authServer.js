@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken'
 import * as dotenv from 'dotenv';
 
 dotenv.config();
+const pool = require('./db');
 const app = express()
 
 app.use(cors({ origin: true, credentials: true }));
