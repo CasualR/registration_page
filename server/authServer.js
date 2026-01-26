@@ -23,9 +23,9 @@ app.get('/api/user', (req, res) => {
 // Pool handling
 
 app.post('/', async (req, res) => {
-  const { name, location } = req.body
+  const { username, password } = req.body
   try {
-    await pool.query('INSERT INTO schools (name, address) VALUES ($1, $2)', [name, location])
+    await pool.query('INSERT INTO schools (name, address) VALUES ($1, $2)', [username, password])
     res.sendStatus(200).send({message: "Successfully added child"})
   } catch (err) {
     console.log(err)
