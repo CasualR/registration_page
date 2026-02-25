@@ -4,9 +4,13 @@ import cors from 'cors';
 import jwt from 'jsonwebtoken'
 import * as dotenv from 'dotenv';
 
+const bcrypt = require('bcrypt');
 dotenv.config();
 const pool = require('./db');
 const app = express()
+
+// Quantity of Salt rounds for creating user 
+const saltRounds = 12;
 
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
@@ -19,6 +23,20 @@ app.get('/api/user', (req, res) => {
   res.send(users)
 })
 
+// Creating new user
+
+app.post('/user/create', (req, res, next) => {
+  
+  bcrypt.hash(req.body.password, saltRounds, (error, hash) => {
+
+    pool.create({
+      
+    })
+
+  })
+
+})
+
 
 // Pool handling
 
@@ -26,7 +44,7 @@ app.post('/', async (req, res) => {
   const { username, password } = req.body
   try {
     await pool.query('INSERT INTO schools (name, address) VALUES ($1, $2)', [username, password])
-    res.sendStatus(200).send({message: "Successfully added child"})
+    res.sendStatus(200).json({message: "Successfully added child"})
   } catch (err) {
     console.log(err)
     res.sendStatus(500)
@@ -36,7 +54,7 @@ app.post('/', async (req, res) => {
 app.get('/setup', async (req, res) => {
   try {
     await pool.query('CREATE TABLE schools( id SERIAL PRIMARY KEY, name VARCHAR(100), address VARCHAR(100) )')
-    res.sendStatus(200).send({message: "Successfully created table"})
+    res.sendStatus(200).json({message: "Successfully created table"})
   } catch (err) {
     console.log(err)
     res.sendStatus(500)
