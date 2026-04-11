@@ -3,10 +3,10 @@ import users from './user.js';
 import cors from 'cors';
 import jwt from 'jsonwebtoken'
 import * as dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
+import pool from './db.js';
 
-const bcrypt = require('bcrypt');
 dotenv.config();
-const pool = require('./db');
 const app = express()
 
 // Quantity of Salt rounds for creating user 
@@ -25,17 +25,33 @@ app.get('/api/user', (req, res) => {
 
 // Creating new user
 
-app.post('/user/create', (req, res, next) => {
-  
-  bcrypt.hash(req.body.password, saltRounds, (error, hash) => {
+app.post('/user/create', async (req, res) => {
+  const { username, password } = req.body;
 
-    pool.create({
-      
-    })
+  if (!username || !password) {
+    return res.status(400).json({ error: 'Username and password are required.' });
+  }
 
-  })
+  try {
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    const result = await pool.query(
+      'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING id, username',
+      [username, hashedPassword]
+    );
 
-})
+    const newUser = result.rows[0];
+    return res.status(201).json({
+      message: 'User created successfully.',
+      user: {
+        id: newUser.id,
+        username: newUser.username,
+      },
+    });
+  } catch (error) {
+    console.error('Error creating user:', error);
+    return res.status(500).json({ error: 'Unable to create user.' });
+  }
+});
 
 
 // Pool handling
